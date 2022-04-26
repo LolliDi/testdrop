@@ -1,0 +1,32 @@
+﻿<Window x:Class="testdrop.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:testdrop"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        
+            
+            <ListView Name="ListViewPa" AllowDrop="True" PreviewDrop="dragDrop" Background="Brown" ScrollViewer.HorizontalScrollBarVisibility="Disabled">
+            <ListView.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <WrapPanel Orientation="Horizontal"/>
+                </ItemsPanelTemplate>
+            </ListView.ItemsPanel>
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <Border>
+                        <StackPanel Orientation="Vertical" Width="100">
+                            <Image Source="Resources/Excel.png" Width="70" Height="100" />
+                            <TextBlock Text="{Binding FileName}" TextWrapping="Wrap" Width="90" TextAlignment="Center"/>
+                        </StackPanel>
+                    </Border>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+            </ListView>
+        
+        
+    </Grid>
+</Window>
